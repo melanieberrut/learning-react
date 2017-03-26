@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom';
 import Booklist from './components/BookList';
 
 ReactDOM.render(
-  <Booklist books={ [] } authors={ {} } />,
+  <Booklist />,
   document.getElementById('root')
 );

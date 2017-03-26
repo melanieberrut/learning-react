@@ -7,7 +7,26 @@ class Booklist extends React.Component {
 		// Super method, for the inheritance to work
 		super(props);
 		// Customisation
-		this.state = { books: this.props.books };
+		this.state = { books: [], authors: {} };
+	}
+	// Fetch request for the data
+	componentDidMount() {
+		fetch("http://localhost:8000/api/books")
+			// return generic response object, read the json
+			.then(response => response.json())
+			// this is going to return another promise
+			// > list of books
+			.then(books => {
+				this.setState({ books })
+			});
+		fetch("http://localhost:8000/api/authors")
+			// return generic response object, read the json
+			.then(response => response.json())
+			// this is going to return another promise
+			// > list of authors
+			.then(authors => {
+				this.setState({ authors })
+			})
 	}
 	// Function to remove the book, with ID of the book
 	deleteBook = (id) => {
@@ -39,7 +58,7 @@ class Booklist extends React.Component {
 						<Book 
 							key={ book.id } 
 							book={ book } 
-							author={ this.props.authors[book.authorId] } 
+							author={ this.state.authors[book.authorId] } 
 							handleDelete={ this.deleteBook }
 						/>
 					);
