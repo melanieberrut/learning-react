@@ -18,7 +18,7 @@ const Book = ({ book, author, handleDelete }) => {
 			{ book.title }
 			</div>
 			{/* Spread all properties of the author object */}
-			<Author { ...author } />
+			{book.authors.map((author, index) => <Author key={ index } { ...author } />)}
 			<div className="price">
 			{ formatPrice(book.price) }
 			</div>

@@ -5,7 +5,7 @@
         "firstName":"Robert",
         "lastName":"Martin"
       },
-      "4":{
+      "7":{
         "firstName":"Peter",
         "lastName":"Seibel"
       },
@@ -31,7 +31,7 @@
         "id": 1,
         "title":"Coders at Work: Reflections on the Craft of Programming",
         "price":2434,
-        "authorId":4
+        "authorId":7
       },
       {
         "id": 2,
