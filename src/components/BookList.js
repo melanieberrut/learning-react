@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from './Book';
+import Form from './Form';
 
 class Booklist extends React.Component {
 	constructor(props){
@@ -17,6 +18,18 @@ class Booklist extends React.Component {
 		// Change the state to the new array of books
 		this.setState({ books });
 	};
+	// Function to add the book
+	addBook = (title, price) => {
+		// Modify the state to change the current book list
+		// and concat a new object to that list
+		this.setState({
+			books: this.state.books.concat({
+				id: Date.now(),
+				title,
+				price
+			})
+		});
+	};
 	render(){
 		return (
 			<ul className="books">
@@ -29,6 +42,9 @@ class Booklist extends React.Component {
 						/>
 					);
 				})}
+				<li>
+					<Form addBookAction={ this.addBook } />
+				</li>
 			</ul>
 		);
 	}
