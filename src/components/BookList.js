@@ -35,9 +35,11 @@ class Booklist extends React.Component {
 			<ul className="books">
 				{this.state.books.map(book =>{
 					return (
+						//  author object is a lookup call
 						<Book 
 							key={ book.id } 
 							book={ book } 
+							author={ this.props.authors[book.authorId] } 
 							handleDelete={ this.deleteBook }
 						/>
 					);

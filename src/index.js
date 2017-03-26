@@ -5,6 +5,6 @@ import { data } from './data';
 import Booklist from './components/BookList';
 
 ReactDOM.render(
-  <Booklist books={ data.books } />,
+  <Booklist books={ data.books } authors={ data.authors } />,
   document.getElementById('root')
 );
