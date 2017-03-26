@@ -10,7 +10,7 @@ class Booklist extends React.Component {
 	}
 	render(){
 		return (
-			<ul class="books">
+			<ul className="books">
 				{this.state.books.map(book =>{
 					return (
 						<Book key={ book.id } book={ book } />
