@@ -11,10 +11,16 @@ const Book = ({ book }) => (
 )
 
 class Booklist extends React.Component {
+	constructor(props){
+		// Super method, for the inheritance to work
+		super(props);
+		// Customisation
+		this.state = { books: this.props.books };
+	}
 	render(){
 		return (
 			<ul>
-				{this.props.books.map(book =>{
+				{this.state.books.map(book =>{
 					return (
 						<Book key={ book.id } book={ book } />
 					);
